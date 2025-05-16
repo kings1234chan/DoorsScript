@@ -55,3 +55,79 @@ Rayfield:Notify({
    },
 },
 })
+
+local Button = MainTab:CreateButton({
+   Name = "Synapse X",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/refs/heads/main/Synapse-X-Remake.lua"))()   
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Infinite Yield FE v6",
+   Callback = function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/ndBKc4LJ", true))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "CatBypasser",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/shadow62x/catbypass/main/upfix"))()
+   end,
+})
+
+local DoorsTab = Window:CreateTab("👁️Doors", nil) -- Title, Image
+local DoorsSection = DoorsTab:CreateSection("Heath Related Scripts")
+
+local Button = DoorsTab:CreateButton({
+   Name = "Doors Force Revive (Uses Revives if you have any)",
+   Callback = function()
+            local remote = game.ReplicatedStorage.RemotesFolder:FindFirstChild("Revive")
+
+if remote then
+    -- Fire the remote event to the server
+    remote:FireServer()
+else
+    print("RemoteEvent not found!")
+end  
+   end,
+})
+
+local Button = DoorsTab:CreateButton({
+   Name = "Heal To Full HP",
+   Callback = function()
+         local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Function to restore health to full
+local function restoreHealth()
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    -- Set health to maximum
+    humanoid.Health = humanoid.MaxHealth
+
+    print("Health has been restored to full!")
+end
+
+-- Call the function to restore health
+restoreHealth()
+   end,
+})
+
+local Button = DoorsTab:CreateButton({
+   Name = "Fullbright (Can't Turn Off Yet)",
+   Callback = function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/HgpFFweB"))()
+   end,
+})
+
+local MM2Tab = Window:CreateTab("🔪MM2", nil) -- Title, Image
+local MM2Section = MM2Tab:CreateSection("MM2 Scripts")
+
+local Button = MM2Tab:CreateButton({
+   Name = "MM2 Hub",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", true))()
+   end,
+})
